@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '4^fw*wh7gw+ek$ipnlp+#bf1py$$d2vobjdds
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['job-portal-10.herokuapp.com']
+ALLOWED_HOSTS = []   # 'job-portal-10.herokuapp.com', '127.0.0.1:8000'
 
 # Email Settings
 
