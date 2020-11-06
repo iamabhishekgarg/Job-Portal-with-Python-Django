@@ -1,5 +1,21 @@
 {% load static %}
 
+<style>
+  .dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.ok:hover {
+  background-color: #1747C3!important;
+  color: aliceblue!important;
+}
+</style>
+
 <header class="site-navbar mt-3">
   <div class="container-fluid">
     <div class="row align-items-center">
@@ -22,14 +38,14 @@
         <div class="ml-auto">
 
 
-          <ul class="nav nav-tabs">
+          <ul class="nav">
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle btn btn-secondary" data-toggle="dropdown" href="#" role="button" aria-haspopup="True"
+              <a class="nav-link dropdown-toggle btn btn-primary text-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="True"
                 aria-expanded="false">
                 {{request.user.first_name}} {{request.user.last_name}}</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
+              <div class="dropdown-menu bg-primary">
+                <a class="dropdown-item text-light ok" href="{% url 'accounts:logout' %}">Logout</a>
 
               </div>
             </li>
