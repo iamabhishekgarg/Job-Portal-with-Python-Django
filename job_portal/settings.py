@@ -32,11 +32,11 @@ ALLOWED_HOSTS = []   # 'job-portal-10.herokuapp.com', '127.0.0.1:8000'
 
 SEND_GRID_API_KEY = ''
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = '' #sendgrid email
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER') # ''
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD') #'' #sendgrid email
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'nazmul199512@gmail.com' #sendgrig email
+DEFAULT_FROM_EMAIL = 'omarfaruk2468@gmail.com' #sendgrig email
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact email from CAREERS'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
