@@ -27,8 +27,12 @@ class EmployeeRegistrationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(EmployeeRegistrationForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'].widget.attrs['placeholder'] = 'Enter your first name'
+        self.fields['last_name'].widget.attrs['placeholder'] = 'Enter your last name'
+        self.fields['username'].widget.attrs['placeholder'] = 'Enter your username'
         self.fields['email'].widget.attrs['placeholder'] = 'Enter a valid e-mail'
-
+        self.fields['password'].widget.attrs['placeholder'] = 'Enter your password'
+        self.fields['confirm_password'].widget.attrs['placeholder'] = 'Enter confirm password'
 
 class EmployeeLoginForm(forms.Form):
     username = forms.CharField(label='Username')
