@@ -35,7 +35,17 @@ def home(request):
 
 
 def about_us(request):
-    return render(request, "jobs/about_us.html", {})
+    jobs = JobListing.objects.all().count()
+    user = User.objects.all().count()
+    company_name = JobListing.objects.filter(company_name__startswith='P').count()
+
+    context = {
+        'job_qs': jobs,
+        'company_name': company_name,
+        'candidates': user
+    }
+
+    return render(request, "jobs/about_us.html", context)
 
 
 def service(request):
